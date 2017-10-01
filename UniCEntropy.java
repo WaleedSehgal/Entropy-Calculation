@@ -30,7 +30,7 @@ public class UniCEntropy {
 		
 		try{
 			
-			File f=new File("MidFile.txt");
+			File f=new File("File.txt");
 			
 			FileReader fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);
