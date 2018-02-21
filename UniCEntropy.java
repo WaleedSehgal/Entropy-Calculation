@@ -18,7 +18,6 @@ import java.util.regex.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-
 /*This class cleans text file from
  *  non Alphabetic characters and calculates entropy
  *  */
@@ -27,7 +26,6 @@ public class UniCEntropy {
 
 	public static void main(String[] args) throws IOException {
 
-		
 		try{
 			
 			File f=new File("File.txt");
@@ -54,7 +52,6 @@ public class UniCEntropy {
 		    	   build.append(sb);
 		       }
 			    
-		       
                //Hashmap stores alphabets and their frequencies
 		       HashMap<Character, Integer> map = new HashMap<>();
 				for (char ch : build.toString().toCharArray()) {
@@ -70,14 +67,12 @@ public class UniCEntropy {
 					map.put(ch, 1);
 				}
 			}
-			
 			System.out.println(map);	
 				
 				int sum = 0;
 				for(int add:map.values()){
 					sum+=add;
 				}
-				
 				
 				int msize = map.size();
 				double fin[] = new double[msize];
@@ -117,14 +112,9 @@ public class UniCEntropy {
                
                 br.close();
 	}
-		
-		
 		catch(IOException e){
-			
 			System.out.println(e.getMessage());
 		                    }
 		
-		
 	                                                         }
-
-                    }
+                }
