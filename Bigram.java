@@ -22,39 +22,25 @@ public class Bigram {
 			
 			File f=new File("MidFile.txt");
 			
-			
 			FileReader fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);
-			
-			
 			
             ArrayList<String> s = new ArrayList();
             ArrayList<String> bigrams = new ArrayList();
             HashMap<String, Integer>map = new HashMap<String, Integer>();
             
-        	
 			String str = null;
 			
 			while((str = br.readLine())!= null){
 				
-				
-				      str = str.replaceAll("[^a-zA-Z ]", "");
-				      str = str.replaceAll("\\[", "").replaceAll("\\]", "");
-				      s.add(str);  
+				str = str.replaceAll("[^a-zA-Z ]", "");
+				str = str.replaceAll("\\[", "").replaceAll("\\]", "");
+				s.add(str);  
 					                 }
-				 
-			          //System.out.println(s);
-			          
-			
-			      
 			StringBuilder build = new StringBuilder();
-			
 			for(String sb: s){
 		    	   build.append(sb);
 		       }
-			
-			
-			//System.out.println(build.length());
 			char p;
 			int count = 0;
 			
@@ -65,8 +51,7 @@ public class Bigram {
 				
 				String gram =Character.toString(build.charAt(i))+Character.toString(build.charAt(i+1));
 				bigrams.add(gram);
-				
-                  				                                                    }
+						                                                    }
 			                                   }
 			System.out.println(bigrams);
 			
@@ -111,7 +96,6 @@ public class Bigram {
            {
         	  double prob = fin[m]/sum;
         	  pro[m] = prob;
-        	 
            }
             
           //calculate all entropies
@@ -120,17 +104,14 @@ public class Bigram {
             	double ent =  (pro[e])*(-Math.log(pro[e])/Math.log(2.0));
             	entrop[e] = ent;
             }
-            
             double entropy = 0.0;
             for(double l: entrop){
             	entropy+=l;
             }
             System.out.println("Entropy for all bigrams is:" +entropy+ " bits");
-           
           
-			br.close();
-			
-               }
+	     br.close();
+	       }
       catch(IOException e){
 			
 			System.out.println(e.getMessage());
